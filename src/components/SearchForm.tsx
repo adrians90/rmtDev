@@ -5,7 +5,16 @@ export default function SearchForm() {
 
   useEffect(() => {
     if (!searchText) return;
-    fetch("https://bytegrad.com/course-assets/projects/rmtdev/api/data");
+
+    const fetchData = async () => {
+      const response = await fetch(
+        `https://bytegrad.com/course-assets/projects/rmtdev/api/data?search=${searchText}`
+      );
+
+      const data = await response.json();
+    };
+
+    fetchData();
   }, [searchText]);
 
   return (
