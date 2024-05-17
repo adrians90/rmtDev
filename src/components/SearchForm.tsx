@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
-
-export default function SearchForm() {
+export default function SearchForm({ setSearchText, searchText }) {
   return (
     <form
       onSubmit={(e) => {

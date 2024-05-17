@@ -26,9 +26,9 @@ function App() {
     <>
       <Background />
 
-      <Header />
+      <Header searchText={searchText} setSearchText={setSearchText} />
 
-      <Container />
+      <Container jobItems={jobItems} />
 
       <Footer />
     </>
