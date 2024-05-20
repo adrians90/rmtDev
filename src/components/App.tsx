@@ -19,9 +19,17 @@ function App() {
   const [searchText, setSearchText] = useState("");
   const { jobItemsSliced: jobItems, isLoading } = useJobItems(searchText);
   const activeId = useActiveId();
+  const [jobItem, setJobItem] = useState(null);
 
   useEffect(() => {
-    fetch(`${BASE_API_URL}`);
+    if (!activeId) return;
+    const fetchData = async () => {
+      const response = await fetch(`${BASE_API_URL}/${activeId}`);
+      const data = await response.json();
+      setJobItem(data.jobItem);
+    };
+
+    fetchData();
   }, [activeId]);
 
   return (
