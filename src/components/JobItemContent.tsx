@@ -5,6 +5,7 @@ import BookmarkIcon from "./BookmarkIcon";
 export default function JobItemContent() {
   const activeId = useActiveId();
   const jobItem = useJobItem(activeId);
+
   if (!jobItem) return <EmptyJobContent />;
 
   return (
