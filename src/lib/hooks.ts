@@ -17,6 +17,7 @@ export function useActiveId() {
       window.removeEventListener("hashchange", handleHashChange);
     };
   }, []);
+  return activeId;
 }
 
 export function useJobItems(searchText: string) {
