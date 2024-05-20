@@ -1,8 +1,8 @@
-import { JobItem } from "../lib/types";
+import { JobItemExpanded } from "../lib/types";
 import BookmarkIcon from "./BookmarkIcon";
 
 type JobItemContentProps = {
-  jobItem: JobItem | null;
+  jobItem: JobItemExpanded | null;
 };
 
 export default function JobItemContent({ jobItem }: JobItemContentProps) {
@@ -11,24 +11,17 @@ export default function JobItemContent({ jobItem }: JobItemContentProps) {
   return (
     <section className="job-details">
       <div>
-        <img
-          src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1272&q=100"
-          alt="#"
-        />
+        <img src={jobItem.coverImgURL} alt="#" />
 
-        <a
-          className="apply-btn"
-          href="https://fictional9thtechwebsite.com/"
-          target="_blank"
-        >
+        <a className="apply-btn" href={jobItem.companyURL} target="_blank">
           Apply
         </a>
 
         <section className="job-info">
           <div className="job-info__left">
-            <div className="job-info__badge">9T</div>
+            <div className="job-info__badge">{jobItem.badgeLetters}</div>
             <div className="job-info__below-badge">
-              <time className="job-info__time">2d</time>
+              <time className="job-info__time">{jobItem.daysAgo}</time>
 
               <BookmarkIcon />
             </div>
@@ -41,15 +34,15 @@ export default function JobItemContent({ jobItem }: JobItemContentProps) {
             <div className="job-info__extras">
               <p className="job-info__extra">
                 <i className="fa-solid fa-clock job-info__extra-icon"></i>
-                Full-Time
+                {jobItem.duration}
               </p>
               <p className="job-info__extra">
                 <i className="fa-solid fa-money-bill job-info__extra-icon"></i>
-                $105,000+
+                {jobItem.salary}
               </p>
               <p className="job-info__extra">
                 <i className="fa-solid fa-location-dot job-info__extra-icon"></i>{" "}
-                Global
+                {jobItem.location}
               </p>
             </div>
           </div>
@@ -64,9 +57,9 @@ export default function JobItemContent({ jobItem }: JobItemContentProps) {
               </p>
             </div>
             <ul className="qualifications__list">
-              <li className="qualifications__item">React</li>
-              <li className="qualifications__item">Next.js</li>
-              <li className="qualifications__item">Tailwind CSS</li>
+              {jobItem.qualifications.map((qualification) => (
+                <li className="qualifications__item">{qualification}</li>
+              ))}
             </ul>
           </section>
 
@@ -78,8 +71,9 @@ export default function JobItemContent({ jobItem }: JobItemContentProps) {
               </p>
             </div>
             <ul className="reviews__list">
-              <li className="reviews__item">Nice building and food also.</li>
-              <li className="reviews__item">Great working experience.</li>
+              {jobItem.reviews.map((review) => (
+                <li className="reviews__item">{review}</li>
+              ))}
             </ul>
           </section>
         </div>
