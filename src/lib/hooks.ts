@@ -63,9 +63,5 @@ export function useJobItems(searchText: string) {
     fetchData();
   }, [searchText]);
 
-  return {
-    jobItemsSliced,
-    isLoading,
-    totalNumberOfResults,
-  };
+  return [jobItemsSliced, isLoading, totalNumberOfResults] as const;
 }
