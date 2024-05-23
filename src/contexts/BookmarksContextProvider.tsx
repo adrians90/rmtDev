@@ -6,7 +6,7 @@ type BookmarksContext = {
   handleToggleBookmark: (id: number) => void;
 };
 
-const BookmarksContext = createContext<BookmarksContext | null>(null);
+export const BookmarksContext = createContext<BookmarksContext | null>(null);
 export default function BookmarksContextProvider({
   children,
 }: {
