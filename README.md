@@ -1,27 +1,25 @@
-# React + TypeScript + Vite
+**rmtDev - Find your remote developer job**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+rmtDev is a website where users can search, sort and bookmark developer jobs.
 
-Currently, two official plugins are available:
+The data is cached and persisted between renders, and state management is handled with the Context API.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Built with: TypeScript, React, CSS, Context API**
 
-## Expanding the ESLint configuration
+**Live link:**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+https://rmt-dev-as90.vercel.app/
 
-- Configure the top-level `parserOptions` property like this:
+To run locally: npm install, npm run dev
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+![image](https://github.com/adrians90/rmtDev/assets/128593202/e33d950c-2fc2-4a92-8ebd-1c7fbe9109a1)
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+![image](https://github.com/adrians90/rmtDev/assets/128593202/c5f59ea1-d449-4103-9022-f44faa16e67a)
+
+![image](https://github.com/adrians90/rmtDev/assets/128593202/dc3b2c4a-c157-4a3f-8f84-59aff7b2da6e)
+
+![image](https://github.com/adrians90/rmtDev/assets/128593202/f90a2a28-ad3d-49ba-9058-c53fb7914b76)
+
+
+
+
