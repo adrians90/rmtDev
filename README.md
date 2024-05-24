@@ -4,7 +4,7 @@ rmtDev is a website where users can search, sort and bookmark developer jobs.
 
 The data is cached and persisted between renders, and state management is handled with the Context API.
 
-**Built with: TypeScript, React, CSS, Context API**
+**Built with: JavaScript, TypeScript, React, CSS, Context API**
 
 **Live link:**
 
